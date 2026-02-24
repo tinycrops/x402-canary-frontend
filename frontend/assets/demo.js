@@ -73,11 +73,7 @@ async function fetchJson(url, contextLabel) {
   const response = await fetch(url, {
     method: "GET",
     cache: "no-store",
-    headers: {
-      Accept: "application/json",
-      "Cache-Control": "no-cache, no-store, max-age=0",
-      Pragma: "no-cache",
-    },
+    headers: { Accept: "application/json" },
   });
   const raw = await response.text();
   let payload = null;
