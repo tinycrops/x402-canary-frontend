@@ -4,17 +4,20 @@ const backendMeta = document.querySelector("#backendMeta");
 const txMeta = document.querySelector("#txMeta");
 const summary = document.querySelector("#summary");
 const balances = document.querySelector("#balances");
+const traffic = document.querySelector("#traffic");
 const cards = document.querySelector("#cards");
 const txList = document.querySelector("#txList");
 const cardTemplate = document.querySelector("#cardTemplate");
 const agentJsonLink = document.querySelector("#agentJsonLink");
 const opsTxLink = document.querySelector("#opsTxLink");
+const opsTrafficLink = document.querySelector("#opsTrafficLink");
 const demoResultsLink = document.querySelector("#demoResultsLink");
 
 const API_BASE_CANDIDATES = getApiBases();
 let activeApiBase = API_BASE_CANDIDATES[0];
 let lastResultsPayload = null;
 let lastTransactionsPayload = null;
+let lastTrafficPayload = null;
 
 backendMeta.textContent = `Backend: ${activeApiBase}`;
 renderBackendLinks();
@@ -40,6 +43,7 @@ async function run(force = false) {
     lastResultsPayload = payload;
     renderResults(payload);
     await refreshTransactions();
+    await refreshTraffic();
   } catch (error) {
     renderError(error?.message ?? "Unknown dashboard error");
   } finally {
@@ -70,6 +74,34 @@ async function refreshTransactions() {
     renderTransactions(payload);
   } catch (error) {
     txMeta.textContent = `Transaction feed error: ${error?.message ?? "unknown error"}`;
+  }
+}
+
+async function refreshTraffic() {
+  try {
+    const params = new URLSearchParams();
+    params.set("events", "2000");
+    params.set("_", String(Date.now()));
+    const { response, payload } = await fetchJsonWithFallback(
+      `/ops/traffic/sources?${params.toString()}`,
+      "traffic sources",
+    );
+    if (response.status === 304) {
+      if (lastTrafficPayload) {
+        renderTraffic(lastTrafficPayload);
+      }
+      return;
+    }
+    if (!response.ok) {
+      traffic.innerHTML = "";
+      traffic.append(buildStat("Traffic feed", `Error ${response.status}`));
+      return;
+    }
+    lastTrafficPayload = payload;
+    renderTraffic(payload);
+  } catch (error) {
+    traffic.innerHTML = "";
+    traffic.append(buildStat("Traffic feed", error?.message ?? "unknown error"));
   }
 }
 
@@ -206,6 +238,20 @@ function renderTransactions(payload) {
   }
 }
 
+function renderTraffic(payload) {
+  const topOrigin = payload.byOrigin?.[0];
+  const topReferer = payload.byReferer?.[0];
+  const topAgent = payload.byUserAgent?.[0];
+
+  traffic.innerHTML = "";
+  traffic.append(
+    buildStat("Paid Hits (window)", String(payload.paidHits ?? 0)),
+    buildStat("Top Origin", topOrigin ? `${topOrigin.key} (${topOrigin.hits})` : "n/a"),
+    buildStat("Top Referer", topReferer ? `${topReferer.key} (${topReferer.hits})` : "n/a"),
+    buildStat("Top User Agent", topAgent ? `${topAgent.key} (${topAgent.hits})` : "n/a"),
+  );
+}
+
 function buildStat(label, value) {
   const wrapper = document.createElement("article");
   wrapper.className = "stat";
@@ -263,6 +309,7 @@ function renderBackendLinks() {
   const links = [
     [agentJsonLink, `${normalized}/agent.json`],
     [opsTxLink, `${normalized}/ops/transactions?limit=25`],
+    [opsTrafficLink, `${normalized}/ops/traffic/sources?events=2000`],
     [demoResultsLink, `${normalized}/demo/results?force=1`],
   ];
   for (const [el, href] of links) {
@@ -275,3 +322,4 @@ function renderBackendLinks() {
 runButton.addEventListener("click", () => run(true));
 
 refreshTransactions();
+refreshTraffic();
