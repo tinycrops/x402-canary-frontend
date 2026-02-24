@@ -8,11 +8,12 @@ const cards = document.querySelector("#cards");
 const txList = document.querySelector("#txList");
 const cardTemplate = document.querySelector("#cardTemplate");
 
-const API_BASE = getApiBase();
+const API_BASE_CANDIDATES = getApiBases();
+let activeApiBase = API_BASE_CANDIDATES[0];
 let lastResultsPayload = null;
 let lastTransactionsPayload = null;
 
-backendMeta.textContent = `Backend: ${API_BASE}`;
+backendMeta.textContent = `Backend: ${activeApiBase}`;
 
 async function run(force = false) {
   setBusy(true);
@@ -20,7 +21,7 @@ async function run(force = false) {
     const params = new URLSearchParams();
     if (force) params.set("force", "1");
     params.set("_", String(Date.now()));
-    const { response, payload } = await fetchJson(`${API_BASE}/demo/results?${params.toString()}`, "demo results");
+    const { response, payload } = await fetchJsonWithFallback(`/demo/results?${params.toString()}`, "demo results");
     if (response.status === 304) {
       if (lastResultsPayload) {
         renderResults(lastResultsPayload);
@@ -47,7 +48,10 @@ async function refreshTransactions() {
     const params = new URLSearchParams();
     params.set("limit", "25");
     params.set("_", String(Date.now()));
-    const { response, payload } = await fetchJson(`${API_BASE}/ops/transactions?${params.toString()}`, "transaction feed");
+    const { response, payload } = await fetchJsonWithFallback(
+      `/ops/transactions?${params.toString()}`,
+      "transaction feed",
+    );
     if (response.status === 304) {
       if (lastTransactionsPayload) {
         renderTransactions(lastTransactionsPayload);
@@ -85,6 +89,22 @@ async function fetchJson(url, contextLabel) {
     }
   }
   return { response, payload };
+}
+
+async function fetchJsonWithFallback(pathAndQuery, contextLabel) {
+  let lastError = null;
+  for (const base of API_BASE_CANDIDATES) {
+    const normalizedBase = base.replace(/\/$/, "");
+    try {
+      const result = await fetchJson(`${normalizedBase}${pathAndQuery}`, contextLabel);
+      activeApiBase = normalizedBase;
+      backendMeta.textContent = `Backend: ${activeApiBase}`;
+      return result;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError ?? new Error(`${contextLabel} failed across all backend URLs`);
 }
 
 function renderResults(payload) {
@@ -203,6 +223,7 @@ function buildStat(label, value) {
 
 function renderError(message) {
   meta.textContent = `Dashboard error: ${message}`;
+  backendMeta.textContent = `Backend unreachable. Tried: ${API_BASE_CANDIDATES.join(" | ")}`;
 }
 
 function setBusy(isBusy) {
@@ -222,12 +243,18 @@ function formatTime(value) {
   return date.toLocaleString();
 }
 
-function getApiBase() {
-  const fromConfig = window.CONFIG?.BACKEND_URL;
-  if (!fromConfig || typeof fromConfig !== "string") {
+function getApiBases() {
+  const primary = window.CONFIG?.BACKEND_URL;
+  const fallbacks = Array.isArray(window.CONFIG?.BACKEND_FALLBACK_URLS)
+    ? window.CONFIG.BACKEND_FALLBACK_URLS
+    : [];
+  const candidates = [primary, ...fallbacks]
+    .filter(value => typeof value === "string")
+    .map(value => value.replace(/\/$/, ""));
+  if (!candidates.length) {
     throw new Error("Missing window.CONFIG.BACKEND_URL. Set frontend/config.js.");
   }
-  return fromConfig.replace(/\/$/, "");
+  return [...new Set(candidates)];
 }
 
 runButton.addEventListener("click", () => run(true));
