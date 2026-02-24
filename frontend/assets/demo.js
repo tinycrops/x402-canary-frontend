@@ -7,6 +7,9 @@ const balances = document.querySelector("#balances");
 const cards = document.querySelector("#cards");
 const txList = document.querySelector("#txList");
 const cardTemplate = document.querySelector("#cardTemplate");
+const agentJsonLink = document.querySelector("#agentJsonLink");
+const opsTxLink = document.querySelector("#opsTxLink");
+const demoResultsLink = document.querySelector("#demoResultsLink");
 
 const API_BASE_CANDIDATES = getApiBases();
 let activeApiBase = API_BASE_CANDIDATES[0];
@@ -14,6 +17,7 @@ let lastResultsPayload = null;
 let lastTransactionsPayload = null;
 
 backendMeta.textContent = `Backend: ${activeApiBase}`;
+renderBackendLinks();
 
 async function run(force = false) {
   setBusy(true);
@@ -95,6 +99,7 @@ async function fetchJsonWithFallback(pathAndQuery, contextLabel) {
       const result = await fetchJson(`${normalizedBase}${pathAndQuery}`, contextLabel);
       activeApiBase = normalizedBase;
       backendMeta.textContent = `Backend: ${activeApiBase}`;
+      renderBackendLinks();
       return result;
     } catch (error) {
       lastError = error;
@@ -251,6 +256,20 @@ function getApiBases() {
     throw new Error("Missing window.CONFIG.BACKEND_URL. Set frontend/config.js.");
   }
   return [...new Set(candidates)];
+}
+
+function renderBackendLinks() {
+  const normalized = activeApiBase.replace(/\/$/, "");
+  const links = [
+    [agentJsonLink, `${normalized}/agent.json`],
+    [opsTxLink, `${normalized}/ops/transactions?limit=25`],
+    [demoResultsLink, `${normalized}/demo/results?force=1`],
+  ];
+  for (const [el, href] of links) {
+    if (!el) continue;
+    el.href = href;
+    el.textContent = href;
+  }
 }
 
 runButton.addEventListener("click", () => run(true));

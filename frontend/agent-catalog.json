@@ -1,0 +1,25 @@
+{
+  "name": "x402-canary",
+  "owner": "@tinycrops",
+  "network": "base-sepolia",
+  "dashboard_url": "https://tinycrops.github.io/x402-canary-frontend/",
+  "backend_url": "https://ath-ms-7a73.tail6017fa.ts.net:8443",
+  "description": "Public x402 testnet marketplace for paid agent-call validation and telemetry.",
+  "paid_endpoints": [
+    {"method": "POST", "path": "/tool/weather"},
+    {"method": "POST", "path": "/tool/summarize"},
+    {"method": "POST", "path": "/market/snapshot"},
+    {"method": "POST", "path": "/market/recommendations"},
+    {"method": "POST", "path": "/market/alerts"}
+  ],
+  "ops_endpoints": [
+    {"method": "GET", "path": "/ops/transactions?limit=25"},
+    {"method": "GET", "path": "/ops/balances"},
+    {"method": "GET", "path": "/demo/results?force=1"},
+    {"method": "GET", "path": "/agent.json"}
+  ],
+  "notes": [
+    "Testnet-only environment",
+    "Designed for both human and automated agent clients"
+  ]
+}

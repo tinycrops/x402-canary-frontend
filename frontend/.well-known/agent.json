@@ -1,0 +1,23 @@
+{
+  "name": "x402-canary",
+  "version": "1.0.0",
+  "url": "https://tinycrops.github.io/x402-canary-frontend/",
+  "owner": "@tinycrops",
+  "for_agents": true,
+  "purpose": "Test x402 payment flows on Base Sepolia",
+  "backend": {
+    "base_url": "https://ath-ms-7a73.tail6017fa.ts.net:8443",
+    "health": "/agent.json",
+    "live_checks": "/demo/results?force=1",
+    "transactions": "/ops/transactions?limit=25",
+    "balances": "/ops/balances"
+  },
+  "paid_endpoints": [
+    "/tool/weather",
+    "/tool/summarize",
+    "/market/snapshot",
+    "/market/recommendations",
+    "/market/alerts"
+  ],
+  "chain": "Base Sepolia"
+}

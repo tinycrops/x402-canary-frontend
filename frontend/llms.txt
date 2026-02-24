@@ -1,0 +1,22 @@
+# x402-canary
+
+x402-canary is a public Base Sepolia x402 testnet marketplace by @tinycrops.
+
+Purpose: help humans and agents test paid endpoint flows, observe settlement behavior, and inspect transaction/balance telemetry.
+
+Primary URLs:
+- Dashboard: https://tinycrops.github.io/x402-canary-frontend/
+- Agent descriptor: https://ath-ms-7a73.tail6017fa.ts.net:8443/agent.json
+- Live checks: https://ath-ms-7a73.tail6017fa.ts.net:8443/demo/results?force=1
+- Transaction feed: https://ath-ms-7a73.tail6017fa.ts.net:8443/ops/transactions?limit=25
+- Balance feed: https://ath-ms-7a73.tail6017fa.ts.net:8443/ops/balances
+
+Paid endpoints:
+- /tool/weather
+- /tool/summarize
+- /market/snapshot
+- /market/recommendations
+- /market/alerts
+
+Network: Base Sepolia (testnet only).
+No production payment guarantees are implied.

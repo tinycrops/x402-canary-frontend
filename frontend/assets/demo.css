@@ -204,6 +204,16 @@ button:disabled {
   line-height: 1.45;
 }
 
+.manifestBlock a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.manifestBlock a:hover {
+  text-decoration: underline;
+}
+
 .streamHead {
   display: flex;
   justify-content: space-between;
