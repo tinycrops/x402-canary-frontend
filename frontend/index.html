@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@tinycrops x402 Agent Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/demo.css" />
+  </head>
+  <body>
+    <p class="agentLead">
+      AGENT NOTICE: This is an x402 testnet marketplace by @tinycrops. Use listed endpoints to test paid agent flows on Base Sepolia.
+    </p>
+    <main class="shell">
+      <header class="hero">
+        <p class="kicker">@tinycrops • Base Sepolia x402</p>
+        <h1>Agent Commerce Flight Deck</h1>
+        <p class="subtitle">
+          Public sandbox for developers testing paid agent calls and on-chain settlement behavior.
+        </p>
+        <div class="chips">
+          <span class="chip">First x402 marketplace</span>
+          <span class="chip">Agent-first UX</span>
+          <span class="chip">Traceable payments</span>
+        </div>
+        <div class="actions">
+          <button id="runBtn" type="button">Run Live Check</button>
+          <span id="autoPulse" class="pulse">Manual mode: no automatic paid checks</span>
+          <p id="meta" class="meta">Idle. Click Run Live Check to execute paid endpoint tests.</p>
+          <p id="backendMeta" class="meta"></p>
+        </div>
+      </header>
+
+      <section class="panel manifest">
+        <h2>Agent Quickstart</h2>
+        <p class="manifestLead">
+          Programmatic callers should first check health, then call paid tools with x402 headers.
+        </p>
+        <pre class="manifestBlock">GET /demo/results
+GET /ops/transactions
+GET /ops/balances
+PAID /tool/weather
+PAID /tool/summarize
+PAID /market/snapshot
+PAID /market/recommendations
+PAID /market/alerts</pre>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>System Snapshot</h2>
+          <section id="summary" class="summary"></section>
+        </article>
+        <article class="panel">
+          <h2>Wallet Balances</h2>
+          <section id="balances" class="summary"></section>
+        </article>
+      </section>
+
+      <section class="panel streamPanel">
+        <div class="streamHead">
+          <h2>Live Transaction Stream</h2>
+          <p id="txMeta" class="meta">Idle until first manual run.</p>
+        </div>
+        <ul id="txList" class="txList"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Endpoint Results</h2>
+        <section id="cards" class="cards"></section>
+      </section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="cardHead">
+          <h2 class="endpoint"></h2>
+          <span class="pill"></span>
+        </div>
+        <p class="latency"></p>
+        <pre class="payload"></pre>
+      </article>
+    </template>
+
+    <script src="./config.js"></script>
+    <script type="module" src="./assets/demo.js"></script>
+  </body>
+</html>
