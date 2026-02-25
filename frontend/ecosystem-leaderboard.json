@@ -1,15 +1,80 @@
 {
-  "generated_at": "2026-02-25T21:30:00Z",
-  "total_audited": 18,
-  "total_scored": 13,
-  "total_unreachable": 5,
-  "avg_score": 9.2,
+  "generated_at": "2026-02-25T22:15:00Z",
+  "total_audited": 170,
+  "total_scored": 158,
+  "total_unreachable": 12,
+  "avg_score": 6.8,
+  "zero_count": 98,
   "auditor_url": "https://ath-ms-7a73.tail6017fa.ts.net:8443",
   "auditor_score": 100,
-  "note": "Partial results \u2014 18 of 175 ecosystem servers audited. Full audit in progress.",
+  "note": "Full audit complete: 170 of 175 ecosystem servers scored. Ecosystem avg 6.8/100.",
   "servers": [
     {
       "rank": 1,
+      "url": "https://missionarygamer.com",
+      "score": 35,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4389
+    },
+    {
+      "rank": 2,
+      "url": "https://codex.everygoodwork.io",
+      "score": 35,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4773
+    },
+    {
+      "rank": 3,
       "url": "https://pinionos.com",
       "score": 30,
       "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
@@ -44,7 +109,312 @@
       "elapsed_ms": 3266
     },
     {
-      "rank": 2,
+      "rank": 4,
+      "url": "https://x402factory.ai",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402"
+      ],
+      "elapsed_ms": 3357
+    },
+    {
+      "rank": 5,
+      "url": "https://basehub-alpha.vercel.app",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402"
+      ],
+      "elapsed_ms": 2979
+    },
+    {
+      "rank": 6,
+      "url": "https://rng.sociologic.ai",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402"
+      ],
+      "elapsed_ms": 2899
+    },
+    {
+      "rank": 7,
+      "url": "https://x402.onchainexpat.com",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402"
+      ],
+      "elapsed_ms": 5210
+    },
+    {
+      "rank": 8,
+      "url": "https://research.heurist.ai",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402"
+      ],
+      "elapsed_ms": 4827
+    },
+    {
+      "rank": 9,
+      "url": "https://x402.blocksec.ai",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402"
+      ],
+      "elapsed_ms": 5393
+    },
+    {
+      "rank": 10,
+      "url": "https://brapi.dev",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402"
+      ],
+      "elapsed_ms": 2981
+    },
+    {
+      "rank": 11,
+      "url": "https://myagenticoverlord.com",
+      "score": 30,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402"
+      ],
+      "elapsed_ms": 2890
+    },
+    {
+      "rank": 12,
+      "url": "https://x402-opal.vercel.app",
+      "score": 20,
+      "verdict": "Discoverable but broken. Agents can find the server but cannot successfully pay.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2736
+    },
+    {
+      "rank": 13,
       "url": "https://acp-x402.virtuals.io",
       "score": 15,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -77,7 +447,7 @@
       "elapsed_ms": 4319
     },
     {
-      "rank": 3,
+      "rank": 14,
       "url": "https://x402.dexter.cash",
       "score": 15,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -110,7 +480,7 @@
       "elapsed_ms": 2628
     },
     {
-      "rank": 4,
+      "rank": 15,
       "url": "https://blockrun.ai",
       "score": 15,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -143,7 +513,7 @@
       "elapsed_ms": 3104
     },
     {
-      "rank": 5,
+      "rank": 16,
       "url": "https://x402.sniperx.fun",
       "score": 15,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -176,7 +546,7 @@
       "elapsed_ms": 7067
     },
     {
-      "rank": 6,
+      "rank": 17,
       "url": "https://api.neynar.com",
       "score": 15,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -209,7 +579,7 @@
       "elapsed_ms": 2336
     },
     {
-      "rank": 7,
+      "rank": 18,
       "url": "https://scout.hugen.tokyo",
       "score": 15,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -242,7 +612,1400 @@
       "elapsed_ms": 4699
     },
     {
-      "rank": 8,
+      "rank": 19,
+      "url": "https://www.x402scan.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2552
+    },
+    {
+      "rank": 20,
+      "url": "https://x402scan-j55w7ornb-merit-systems.vercel.app",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2891
+    },
+    {
+      "rank": 21,
+      "url": "https://x402.911fund.io",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402"
+      ],
+      "elapsed_ms": 2378
+    },
+    {
+      "rank": 22,
+      "url": "https://pro-api.coingecko.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2850
+    },
+    {
+      "rank": 23,
+      "url": "https://staging.toolkit.dev",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 8635
+    },
+    {
+      "rank": 24,
+      "url": "https://pubmed-trends-x402.ben-miles2.workers.dev",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2399
+    },
+    {
+      "rank": 25,
+      "url": "https://minifetch.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2874
+    },
+    {
+      "rank": 26,
+      "url": "https://x402.naiko.io",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2844
+    },
+    {
+      "rank": 27,
+      "url": "https://cryptorugmunch.app",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4028
+    },
+    {
+      "rank": 28,
+      "url": "https://api.auor.io",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3283
+    },
+    {
+      "rank": 29,
+      "url": "https://www.pawr.link",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3717
+    },
+    {
+      "rank": 30,
+      "url": "https://gateway.offchain.wtf",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3574
+    },
+    {
+      "rank": 31,
+      "url": "https://wurkapi.fun",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3028
+    },
+    {
+      "rank": 32,
+      "url": "https://api.bloomfilter.xyz",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2954
+    },
+    {
+      "rank": 33,
+      "url": "https://weather.hugen.tokyo",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4770
+    },
+    {
+      "rank": 34,
+      "url": "https://emoji.today",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3089
+    },
+    {
+      "rank": 35,
+      "url": "https://mailcheck.hugen.tokyo",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4598
+    },
+    {
+      "rank": 36,
+      "url": "https://gotobi.hugen.tokyo",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4773
+    },
+    {
+      "rank": 37,
+      "url": "https://img402.dev",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4339
+    },
+    {
+      "rank": 38,
+      "url": "https://www.book-bot.app",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3466
+    },
+    {
+      "rank": 39,
+      "url": "https://agentic.intentfi.io",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2580
+    },
+    {
+      "rank": 40,
+      "url": "https://cryptobuddy-96zq.onrender.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402"
+      ],
+      "elapsed_ms": 2875
+    },
+    {
+      "rank": 41,
+      "url": "https://x402.o8.is",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2746
+    },
+    {
+      "rank": 42,
+      "url": "https://plush.fun",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2927
+    },
+    {
+      "rank": 43,
+      "url": "https://staging.plush.fun",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2780
+    },
+    {
+      "rank": 44,
+      "url": "https://api2ls.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3144
+    },
+    {
+      "rank": 45,
+      "url": "https://nittarab.dev",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3502
+    },
+    {
+      "rank": 46,
+      "url": "https://www.netprotocol.app",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4330
+    },
+    {
+      "rank": 47,
+      "url": "https://obagents.vercel.app",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402"
+      ],
+      "elapsed_ms": 4243
+    },
+    {
+      "rank": 48,
+      "url": "https://clawmail.xyz",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2646
+    },
+    {
+      "rank": 49,
+      "url": "https://search.reversesandbox.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3230
+    },
+    {
+      "rank": 50,
+      "url": "https://mint.snowfro.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "ok",
+          "base_url": null,
+          "base_url_public": false,
+          "endpoints_listed": 0
+        },
+        "agent_json": {
+          "status": "invalid_json"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt advertises localhost base_url \u2014 external agents cannot reach endpoints",
+        "high: /agent.json returned invalid JSON",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2909
+    },
+    {
+      "rank": 51,
+      "url": "https://mercurio.agentscantina.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3605
+    },
+    {
+      "rank": 52,
+      "url": "https://www.cookies4humans.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2829
+    },
+    {
+      "rank": 53,
+      "url": "https://gen.portalfoundation.ai",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "ok"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402"
+      ],
+      "elapsed_ms": 3153
+    },
+    {
+      "rank": 54,
+      "url": "https://api.moltdomesticproduct.com",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4939
+    },
+    {
+      "rank": 55,
+      "url": "https://api.evplus.ai",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3048
+    },
+    {
+      "rank": 56,
+      "url": "https://www.luckymint.xyz",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 5148
+    },
+    {
+      "rank": 57,
+      "url": "https://nacian.finance",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3882
+    },
+    {
+      "rank": 58,
+      "url": "https://www.ritmex.one",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": true,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3113
+    },
+    {
+      "rank": 59,
+      "url": "https://nut402.codenut.xyz",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 200 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4617
+    },
+    {
+      "rank": 60,
+      "url": "https://cnvrt.ing",
+      "score": 15,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "ok",
+          "allows_crawlers": false,
+          "mentions_agent_txt": false
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3123
+    },
+    {
+      "rank": 61,
       "url": "https://enrichx402.com",
       "score": 0,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -274,7 +2037,7 @@
       "elapsed_ms": 3499
     },
     {
-      "rank": 9,
+      "rank": 62,
       "url": "https://mcp-x402.vishwanetwork.xyz",
       "score": 0,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -306,7 +2069,7 @@
       "elapsed_ms": 3108
     },
     {
-      "rank": 10,
+      "rank": 63,
       "url": "https://public.zapper.xyz",
       "score": 0,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -338,7 +2101,7 @@
       "elapsed_ms": 3363
     },
     {
-      "rank": 11,
+      "rank": 64,
       "url": "https://x402.mode.network",
       "score": 0,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -370,7 +2133,7 @@
       "elapsed_ms": 3176
     },
     {
-      "rank": 12,
+      "rank": 65,
       "url": "https://x402.twit.sh",
       "score": 0,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -402,7 +2165,7 @@
       "elapsed_ms": 3179
     },
     {
-      "rank": 13,
+      "rank": 66,
       "url": "https://x402.ottoai.services",
       "score": 0,
       "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
@@ -432,6 +2195,2950 @@
         "medium: /.well-known/x402.json not served"
       ],
       "elapsed_ms": 3477
+    },
+    {
+      "rank": 67,
+      "url": "https://x402.silverbackdefi.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3611
+    },
+    {
+      "rank": 68,
+      "url": "https://silverback-x402.onrender.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3035
+    },
+    {
+      "rank": 69,
+      "url": "https://nation.service.crestal.network",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 502 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3090
+    },
+    {
+      "rank": 70,
+      "url": "https://api.paytoll.io",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3187
+    },
+    {
+      "rank": 71,
+      "url": "https://polymarketeer.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3240
+    },
+    {
+      "rank": 72,
+      "url": "https://hello-world-x402.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2969
+    },
+    {
+      "rank": 73,
+      "url": "https://capable-grace-production-ab1c.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2688
+    },
+    {
+      "rank": 74,
+      "url": "https://x402.slinkylayer.ai",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4545
+    },
+    {
+      "rank": 75,
+      "url": "https://api.nansen.ai",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3257
+    },
+    {
+      "rank": 76,
+      "url": "https://x402-tools.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3158
+    },
+    {
+      "rank": 77,
+      "url": "https://cryptorugmunch.ngrok.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2831
+    },
+    {
+      "rank": 78,
+      "url": "https://lavarnd.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3229
+    },
+    {
+      "rank": 79,
+      "url": "https://x402.creative-tim.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2327
+    },
+    {
+      "rank": 80,
+      "url": "https://api.slamai.dev",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3181
+    },
+    {
+      "rank": 81,
+      "url": "https://chrombot-x402.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2658
+    },
+    {
+      "rank": 82,
+      "url": "https://gifu-server.onrender.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3174
+    },
+    {
+      "rank": 83,
+      "url": "https://www.genbase.fun",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2737
+    },
+    {
+      "rank": 84,
+      "url": "https://api.nftitem.io",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2765
+    },
+    {
+      "rank": 85,
+      "url": "https://api.x-router.ai",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2657
+    },
+    {
+      "rank": 86,
+      "url": "https://filme-junior-ann-latter.trycloudflare.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2300
+    },
+    {
+      "rank": 87,
+      "url": "https://mirror-colon-arrives-verse.trycloudflare.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2108
+    },
+    {
+      "rank": 88,
+      "url": "https://ports-greatly-population-installing.trycloudflare.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2202
+    },
+    {
+      "rank": 89,
+      "url": "https://favorites-ppc-meat-loved.trycloudflare.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2169
+    },
+    {
+      "rank": 90,
+      "url": "https://slimy-cougars-feel.loca.lt",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 503 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2658
+    },
+    {
+      "rank": 91,
+      "url": "https://www.clawcall.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2663
+    },
+    {
+      "rank": 92,
+      "url": "https://www.agentgram.site",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2867
+    },
+    {
+      "rank": 93,
+      "url": "https://library.proofivy.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3058
+    },
+    {
+      "rank": 94,
+      "url": "https://game-theory-agent-production.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "ok"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3035
+    },
+    {
+      "rank": 95,
+      "url": "https://pay.lnpay.ai",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4565
+    },
+    {
+      "rank": 96,
+      "url": "https://x402-next-mainnet-wheat.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2640
+    },
+    {
+      "rank": 97,
+      "url": "https://openapi.aisa.one",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4022
+    },
+    {
+      "rank": 98,
+      "url": "https://chrombot-x402-inohxop4k-eval-engine.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2473
+    },
+    {
+      "rank": 99,
+      "url": "https://basepost.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3091
+    },
+    {
+      "rank": 100,
+      "url": "https://nickeljoke.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2660
+    },
+    {
+      "rank": 101,
+      "url": "https://boostpass.qrbase.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2543
+    },
+    {
+      "rank": 102,
+      "url": "https://x402whois.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4564
+    },
+    {
+      "rank": 103,
+      "url": "https://slamlink-ai-main-50fbb45.d2.zuplo.dev",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3201
+    },
+    {
+      "rank": 104,
+      "url": "https://bricks.builddetroit.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2654
+    },
+    {
+      "rank": 105,
+      "url": "https://api-dev.agents.skillfulai.io",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3098
+    },
+    {
+      "rank": 106,
+      "url": "https://x402-ai-starter.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3289
+    },
+    {
+      "rank": 107,
+      "url": "https://agent1-gateway.aurracloud.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3138
+    },
+    {
+      "rank": 108,
+      "url": "https://snapshot-api.zeebot.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2318
+    },
+    {
+      "rank": 109,
+      "url": "https://x402.browserbase.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3015
+    },
+    {
+      "rank": 110,
+      "url": "https://x402-ai-starter-flax.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2651
+    },
+    {
+      "rank": 111,
+      "url": "https://x402-ai-starter-eta.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4094
+    },
+    {
+      "rank": 112,
+      "url": "https://x402-ai-starter-alpha.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3860
+    },
+    {
+      "rank": 113,
+      "url": "https://chrombot-x402-qf0bnhmrg-eval-engine.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2357
+    },
+    {
+      "rank": 114,
+      "url": "https://robomoustach.io",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2716
+    },
+    {
+      "rank": 115,
+      "url": "https://x402-demo-discovery-endpoint.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2537
+    },
+    {
+      "rank": 116,
+      "url": "https://nanobrain-alpha.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2591
+    },
+    {
+      "rank": 117,
+      "url": "https://x402-cybercentry-wallet-verification.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3905
+    },
+    {
+      "rank": 118,
+      "url": "https://x402-echo-service.fly.dev",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3184
+    },
+    {
+      "rank": 119,
+      "url": "https://x402-cybercentry-cyber-security-consultant.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4114
+    },
+    {
+      "rank": 120,
+      "url": "https://token-api.x402hub.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 3017
+    },
+    {
+      "rank": 121,
+      "url": "https://bazaaro-agent.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3039
+    },
+    {
+      "rank": 122,
+      "url": "https://xx402.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3348
+    },
+    {
+      "rank": 123,
+      "url": "https://x402.blackswan.wtf",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3229
+    },
+    {
+      "rank": 124,
+      "url": "https://grapevine.dev-mypinata.cloud",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 400 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2846
+    },
+    {
+      "rank": 125,
+      "url": "https://x402-cybercentry-quantum-cryptography-verification.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3417
+    },
+    {
+      "rank": 126,
+      "url": "https://clawmegle-production.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3611
+    },
+    {
+      "rank": 127,
+      "url": "https://sportsarbitrageapi-production.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3397
+    },
+    {
+      "rank": 128,
+      "url": "https://api.recoupable.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2488
+    },
+    {
+      "rank": 129,
+      "url": "https://www.shirt.sh",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3146
+    },
+    {
+      "rank": 130,
+      "url": "https://api.punkpredictor.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2903
+    },
+    {
+      "rank": 131,
+      "url": "https://resources.x402scan.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2997
+    },
+    {
+      "rank": 132,
+      "url": "https://x402.jinn.network",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3392
+    },
+    {
+      "rank": 133,
+      "url": "https://www.qrbase.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2227
+    },
+    {
+      "rank": 134,
+      "url": "https://x402stt.dtelecom.org",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3128
+    },
+    {
+      "rank": 135,
+      "url": "https://recoup-api-git-sweetmantech-myc-3550-b3eea0-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2884
+    },
+    {
+      "rank": 136,
+      "url": "https://www.xplace.dev",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3744
+    },
+    {
+      "rank": 137,
+      "url": "https://x402-cybercentry-web-application-verification.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3318
+    },
+    {
+      "rank": 138,
+      "url": "https://x402-ai-starter-topaz-seven.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 503 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3390
+    },
+    {
+      "rank": 139,
+      "url": "https://x402.auteng.ai",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3581
+    },
+    {
+      "rank": 140,
+      "url": "https://x402repo.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2383
+    },
+    {
+      "rank": 141,
+      "url": "https://recoup-rketqmcdu-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2781
+    },
+    {
+      "rank": 142,
+      "url": "https://x402-mainnet.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2908
+    },
+    {
+      "rank": 143,
+      "url": "https://recoup-api-git-sweetmantech-myc-4077-32a4e4-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2935
+    },
+    {
+      "rank": 144,
+      "url": "https://x721.dev",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 4693
+    },
+    {
+      "rank": 145,
+      "url": "https://api.genvox.io",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2549
+    },
+    {
+      "rank": 146,
+      "url": "https://nation.service.crestal.dev",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 502 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3106
+    },
+    {
+      "rank": 147,
+      "url": "https://recoup-qgrbqflbo-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2659
+    },
+    {
+      "rank": 148,
+      "url": "https://x402-cybercentry-private-data-verification.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3307
+    },
+    {
+      "rank": 149,
+      "url": "https://api.gudrok.io",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3058
+    },
+    {
+      "rank": 150,
+      "url": "https://places-api.x402hub.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2623
+    },
+    {
+      "rank": 151,
+      "url": "https://api.x402checkers.com",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3379
+    },
+    {
+      "rank": 152,
+      "url": "https://recoup-api-git-sweetmantech-myc-3555-37865d-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2597
+    },
+    {
+      "rank": 153,
+      "url": "https://recoup-28x9ye415-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2782
+    },
+    {
+      "rank": 154,
+      "url": "https://x402-cybercentry-ethereum-token-verification.up.railway.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 3432
+    },
+    {
+      "rank": 155,
+      "url": "https://evaluator.openmid.xyz",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "error"
+        },
+        "agent_json": {
+          "status": "error"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "medium: /.well-known/x402.json not served",
+        "medium: Cold GET /tool/weather failed to connect"
+      ],
+      "elapsed_ms": 2655
+    },
+    {
+      "rank": 156,
+      "url": "https://recoup-api-git-sweetmantech-myc-3552-32e6b7-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2558
+    },
+    {
+      "rank": 157,
+      "url": "https://recoup-api-git-sweetmantech-myc-3562-37a0ab-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2421
+    },
+    {
+      "rank": 158,
+      "url": "https://recoup-api-git-sweetmantech-myc-3545-451076-recoupable-ad724970.vercel.app",
+      "score": 0,
+      "verdict": "Not discoverable. Critical gaps prevent any agent from finding or using this server.",
+      "advertised_base_url": null,
+      "surfaces": {
+        "agent_txt": {
+          "status": "missing"
+        },
+        "agent_json": {
+          "status": "missing"
+        },
+        "robots_txt": {
+          "status": "missing"
+        },
+        "well_known_x402": {
+          "status": "missing"
+        },
+        "well_known_agent": {
+          "status": "missing"
+        }
+      },
+      "top_gaps": [
+        "critical: /agent.txt not found or unreachable",
+        "high: /agent.json not found",
+        "high: /robots.txt missing \u2014 crawlers get no guidance",
+        "high: Cold GET /tool/weather returned HTTP 404 instead of 402",
+        "medium: /.well-known/x402.json not served"
+      ],
+      "elapsed_ms": 2745
     }
   ],
   "unreachable": [
@@ -453,6 +5160,34 @@
     },
     {
       "url": "https://gateway.grapevine.fyi",
+      "reason": "HTTP 402"
+    },
+    {
+      "url": "https://pubmed.sekgen.xyz",
+      "reason": "HTTP 402"
+    },
+    {
+      "url": "https://xluihnzwcmxybtygewvy.supabase.co",
+      "reason": "HTTP 402"
+    },
+    {
+      "url": "https://tools-agent-x402-production.up.railway.app",
+      "reason": "HTTP 402"
+    },
+    {
+      "url": "https://obtained-wolf-perceived-publisher.trycloudflare.com",
+      "reason": "HTTP 402"
+    },
+    {
+      "url": "https://legaleasy.tools",
+      "reason": "HTTP 402"
+    },
+    {
+      "url": "https://x402.akave.com",
+      "reason": "HTTP 402"
+    },
+    {
+      "url": "https://x402.bedev.hubble-rpc.xyz",
       "reason": "HTTP 402"
     }
   ]
