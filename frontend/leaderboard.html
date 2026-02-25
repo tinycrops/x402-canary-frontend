@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>x402 Ecosystem Discoverability Leaderboard | x402-canary</title>
+    <meta name="description" content="Automated discoverability audit of 175 x402 servers — scored 0-100 on agent discoverability surfaces." />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://tinycrops.github.io/x402-canary-frontend/leaderboard.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="x402 Ecosystem Discoverability Leaderboard" />
+    <meta property="og:description" content="Which x402 servers are actually findable by agents? Automated audit of 175 servers." />
+    <meta property="og:url" content="https://tinycrops.github.io/x402-canary-frontend/leaderboard.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f6f3ec;
+        --bg-soft: #fffcf6;
+        --ink: #1f2620;
+        --ink-dim: #5c685b;
+        --line: #cfd8ca;
+        --green: #35764e;
+        --moss: #498b5f;
+        --amber: #a5682f;
+        --red: #c34c3a;
+        --blue: #306a8d;
+        --ok-bg: #e2f4e7;
+        --bad-bg: #fbe8e6;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Syne", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(84rem 32rem at 8% -10%, rgba(104, 173, 118, 0.26), transparent 72%),
+          radial-gradient(76rem 30rem at 95% -20%, rgba(232, 176, 121, 0.2), transparent 66%),
+          linear-gradient(180deg, #f5f1e8, #f6f3ec 32%, #f0ebe1);
+      }
+
+      .agentLead {
+        margin: 0;
+        padding: 0.52rem 0.82rem;
+        background: #203425;
+        color: #eff9ef;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.76rem;
+        line-height: 1.35;
+        border-bottom: 1px solid #38503a;
+      }
+
+      .shell {
+        width: min(1220px, 94vw);
+        margin: 1.1rem auto 2.4rem;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        background: linear-gradient(162deg, rgba(255, 252, 246, 0.97), rgba(248, 243, 232, 0.97));
+        border-radius: 14px;
+        box-shadow: 0 12px 34px rgba(45, 63, 40, 0.12);
+        padding: 1.4rem 1.5rem;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 1.4rem 1.5rem 1.2rem;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.76rem;
+        color: var(--moss);
+        text-decoration: none;
+        margin-bottom: 0.9rem;
+        opacity: 0.85;
+        transition: opacity 0.15s;
+      }
+      .back-link:hover { opacity: 1; }
+      .kicker {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.74rem;
+        color: var(--moss);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin: 0 0 0.5rem;
+      }
+      h1 {
+        font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+        font-weight: 800;
+        margin: 0 0 0.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      .subtitle {
+        color: var(--ink-dim);
+        margin: 0 0 1.1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .note-banner {
+        display: inline-block;
+        background: rgba(165, 104, 47, 0.12);
+        border: 1px solid rgba(165, 104, 47, 0.3);
+        color: var(--amber);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.76rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+      }
+
+      /* Stats row */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 0.75rem;
+      }
+      .stat-card {
+        border: 1px solid var(--line);
+        background: rgba(255, 252, 246, 0.7);
+        border-radius: 10px;
+        padding: 1rem 1.1rem;
+        text-align: center;
+      }
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 0.3rem;
+      }
+      .stat-label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        color: var(--ink-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .stat-card.highlight .stat-value { color: var(--green); }
+      .stat-card.warn .stat-value { color: var(--red); }
+      .stat-card.amber .stat-value { color: var(--amber); }
+
+      /* Methodology */
+      .method-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Syne", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--ink-dim);
+        padding: 0;
+        margin-bottom: 0.75rem;
+      }
+      .method-toggle .chevron {
+        transition: transform 0.2s;
+        font-size: 0.7rem;
+      }
+      .method-toggle[aria-expanded="true"] .chevron { transform: rotate(90deg); }
+      .method-body {
+        display: none;
+      }
+      .method-body.open {
+        display: block;
+      }
+      .method-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.82rem;
+      }
+      .method-table th {
+        text-align: left;
+        color: var(--ink-dim);
+        font-weight: 500;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.3rem 0.5rem;
+        border-bottom: 1px solid var(--line);
+      }
+      .method-table td {
+        padding: 0.4rem 0.5rem;
+        border-bottom: 1px solid rgba(207, 216, 202, 0.4);
+        vertical-align: top;
+      }
+      .pts {
+        font-weight: 600;
+        color: var(--blue);
+        white-space: nowrap;
+      }
+
+      /* Leaderboard table */
+      h2 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin: 0 0 1rem;
+        letter-spacing: -0.01em;
+      }
+      .lb-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+      .lb-table thead th {
+        text-align: left;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--ink-dim);
+        padding: 0.4rem 0.6rem;
+        border-bottom: 2px solid var(--line);
+      }
+      .lb-table tbody tr {
+        border-bottom: 1px solid rgba(207, 216, 202, 0.4);
+        transition: background 0.12s;
+      }
+      .lb-table tbody tr:hover {
+        background: rgba(53, 118, 78, 0.04);
+      }
+      .lb-table td {
+        padding: 0.65rem 0.6rem;
+        vertical-align: middle;
+      }
+      .rank {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--ink-dim);
+        width: 2.5rem;
+      }
+      .score-cell {
+        width: 120px;
+      }
+      .score-bar-wrap {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .score-num {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.88rem;
+        font-weight: 600;
+        width: 2.2rem;
+        text-align: right;
+        flex-shrink: 0;
+      }
+      .score-bar-bg {
+        flex: 1;
+        height: 6px;
+        background: rgba(207, 216, 202, 0.5);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .score-bar-fill {
+        height: 100%;
+        border-radius: 3px;
+        transition: width 0.6s ease;
+      }
+      .score-bar-fill.green { background: var(--green); }
+      .score-bar-fill.amber { background: var(--amber); }
+      .score-bar-fill.red { background: var(--red); }
+      .score-bar-fill.zero { background: #bbb; }
+
+      .url-cell {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.78rem;
+        max-width: 260px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .url-cell a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+      .url-cell a:hover { text-decoration: underline; }
+      .verdict-cell {
+        font-size: 0.82rem;
+        color: var(--ink-dim);
+        max-width: 220px;
+      }
+      .gap-cell {
+        max-width: 280px;
+      }
+      .gap-tag {
+        display: inline-block;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.68rem;
+        padding: 0.15rem 0.45rem;
+        border-radius: 4px;
+        margin: 0.1rem 0.15rem 0.1rem 0;
+        white-space: nowrap;
+      }
+      .gap-tag.critical { background: var(--bad-bg); color: var(--red); }
+      .gap-tag.high { background: rgba(165, 104, 47, 0.12); color: var(--amber); }
+      .gap-tag.medium { background: rgba(48, 106, 141, 0.1); color: var(--blue); }
+
+      /* Unreachable section */
+      .unreachable-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Syne", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--ink-dim);
+        padding: 0.1rem 0;
+        margin: 0;
+      }
+      .unreachable-toggle .chevron { transition: transform 0.2s; }
+      .unreachable-toggle[aria-expanded="true"] .chevron { transform: rotate(90deg); }
+      .unreachable-list {
+        display: none;
+        margin-top: 0.75rem;
+      }
+      .unreachable-list.open { display: block; }
+      .unreachable-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.45rem 0.5rem;
+        border-bottom: 1px solid rgba(207, 216, 202, 0.4);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.78rem;
+      }
+      .unreachable-item:last-child { border-bottom: none; }
+      .err-reason {
+        color: var(--red);
+        font-size: 0.72rem;
+        margin-left: 1rem;
+        flex-shrink: 0;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        color: var(--ink-dim);
+        padding: 1rem 0 0.5rem;
+        line-height: 1.6;
+      }
+      footer a { color: var(--moss); text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+
+      .loading {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.88rem;
+        color: var(--ink-dim);
+        padding: 2rem;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        .verdict-cell, .gap-cell { display: none; }
+        .url-cell { max-width: 160px; }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="agentLead">
+      AGENT NOTICE: x402 ecosystem discoverability leaderboard — auditor at
+      <span id="auditorUrl">https://ath-ms-7a73.tail6017fa.ts.net:8443</span>.
+      Each audit call costs $0.01 USDC on Base Sepolia.
+    </p>
+
+    <main class="shell">
+      <div class="card hero">
+        <a class="back-link" href="./index.html">← Back to Flight Deck</a>
+        <p class="kicker">@tinycrops • x402 Ecosystem Audit</p>
+        <h1>Discoverability Leaderboard</h1>
+        <p class="subtitle">
+          Automated audit of 175 x402 servers — scored 0–100 on how well agents can find, understand, and pay them.
+        </p>
+        <span class="note-banner" id="noteBanner">Loading…</span>
+      </div>
+
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+          <div class="stat-value" id="statAudited">—</div>
+          <div class="stat-label">Servers Audited</div>
+        </div>
+        <div class="stat-card amber">
+          <div class="stat-value" id="statAvg">—</div>
+          <div class="stat-label">Avg Score / 100</div>
+        </div>
+        <div class="stat-card warn">
+          <div class="stat-value" id="statZero">—</div>
+          <div class="stat-label">Scored Zero</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-value" id="statOurs">100</div>
+          <div class="stat-label">Our Server (tinycrops)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <button class="method-toggle" aria-expanded="false" onclick="toggleMethod(this)">
+          <span class="chevron">▶</span> Scoring Methodology
+        </button>
+        <div class="method-body" id="methodBody">
+          <table class="method-table">
+            <thead>
+              <tr><th>Surface</th><th>Condition</th><th>Points</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>/agent.txt</code></td><td>Present + base_url is public (not localhost)</td><td class="pts">+30</td></tr>
+              <tr><td><code>/agent.json</code></td><td>Returns valid JSON with endpoint list</td><td class="pts">+20</td></tr>
+              <tr><td>Paid endpoint</td><td>Returns <code>402 Payment Required</code> on cold call</td><td class="pts">+20</td></tr>
+              <tr><td><code>/.well-known/x402.json</code></td><td>Present and valid</td><td class="pts">+15</td></tr>
+              <tr><td><code>/robots.txt</code></td><td>Present</td><td class="pts">+15</td></tr>
+            </tbody>
+          </table>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:0.74rem;color:var(--ink-dim);margin:0.75rem 0 0;">
+            Minimum passing score before going public: <strong>80/100</strong>. Score reflects cold-path agent discoverability only — not endpoint functionality or uptime.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" id="leaderboardCard">
+        <h2>Scored Servers</h2>
+        <div class="loading" id="loadingMsg">Loading leaderboard data…</div>
+        <table class="lb-table" id="lbTable" style="display:none">
+          <thead>
+            <tr>
+              <th class="rank">#</th>
+              <th class="score-cell">Score</th>
+              <th>URL</th>
+              <th class="verdict-cell">Verdict</th>
+              <th class="gap-cell">Top Gaps</th>
+            </tr>
+          </thead>
+          <tbody id="lbBody"></tbody>
+        </table>
+      </div>
+
+      <div class="card" id="unreachableCard" style="display:none">
+        <button class="unreachable-toggle" aria-expanded="false" onclick="toggleUnreachable(this)">
+          <span id="unreachableTitle">Unreachable / Error</span>
+          <span class="chevron">▶</span>
+        </button>
+        <div class="unreachable-list" id="unreachableList"></div>
+      </div>
+
+      <footer>
+        Audited by <a href="./index.html">tinycrops x402-canary</a> •
+        Audit endpoint: <code>POST /tool/audit-x402-server</code> •
+        Source: Coinbase CDP + x402scan discovery data (Feb 2026)<br>
+        <span id="generatedAt" style="opacity:0.6"></span>
+      </footer>
+    </main>
+
+    <script>
+      function scoreClass(score) {
+        if (score >= 80) return 'green';
+        if (score >= 40) return 'amber';
+        if (score > 0)   return 'red';
+        return 'zero';
+      }
+
+      function scoreColor(score) {
+        if (score >= 80) return 'var(--green)';
+        if (score >= 40) return 'var(--amber)';
+        if (score > 0)   return 'var(--red)';
+        return '#bbb';
+      }
+
+      function gapSeverity(gap) {
+        if (gap.startsWith('critical')) return 'critical';
+        if (gap.startsWith('high'))     return 'high';
+        return 'medium';
+      }
+
+      function toggleMethod(btn) {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        document.getElementById('methodBody').classList.toggle('open', !expanded);
+      }
+
+      function toggleUnreachable(btn) {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        document.getElementById('unreachableList').classList.toggle('open', !expanded);
+      }
+
+      async function loadLeaderboard() {
+        try {
+          const res = await fetch('./ecosystem-leaderboard.json');
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          render(data);
+        } catch (e) {
+          document.getElementById('loadingMsg').textContent = `Failed to load: ${e.message}`;
+        }
+      }
+
+      function render(data) {
+        // Note banner
+        document.getElementById('noteBanner').textContent = data.note || '';
+
+        // Stats
+        document.getElementById('statAudited').textContent = data.total_audited ?? '—';
+        document.getElementById('statAvg').textContent =
+          data.avg_score != null ? data.avg_score.toFixed(1) : '—';
+        const zeroCount = (data.servers || []).filter(s => s.score === 0).length;
+        document.getElementById('statZero').textContent = zeroCount;
+        document.getElementById('statOurs').textContent = data.auditor_score ?? '100';
+
+        // Agent notice
+        if (data.auditor_url) {
+          document.getElementById('auditorUrl').textContent = data.auditor_url;
+        }
+
+        // Generated at
+        if (data.generated_at) {
+          document.getElementById('generatedAt').textContent =
+            'Last updated: ' + new Date(data.generated_at).toUTCString();
+        }
+
+        // Leaderboard rows
+        const body = document.getElementById('lbBody');
+        (data.servers || []).forEach(s => {
+          const cls = scoreClass(s.score);
+          const pct = Math.max(s.score, 2);
+          const gaps = (s.top_gaps || []).map(g => {
+            const sev = gapSeverity(g);
+            const label = g.replace(/^(critical|high|medium|low):\s*/i, '');
+            return `<span class="gap-tag ${sev}">${label}</span>`;
+          }).join('');
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="rank">${s.rank}</td>
+            <td class="score-cell">
+              <div class="score-bar-wrap">
+                <span class="score-num" style="color:${scoreColor(s.score)}">${s.score}</span>
+                <div class="score-bar-bg">
+                  <div class="score-bar-fill ${cls}" style="width:${pct}%"></div>
+                </div>
+              </div>
+            </td>
+            <td class="url-cell"><a href="${s.url}" target="_blank" rel="noopener">${s.url.replace(/^https?:\/\//, '')}</a></td>
+            <td class="verdict-cell">${s.verdict || '—'}</td>
+            <td class="gap-cell">${gaps || '<span style="color:var(--ink-dim);font-size:0.74rem">none recorded</span>'}</td>
+          `;
+          body.appendChild(tr);
+        });
+
+        document.getElementById('loadingMsg').style.display = 'none';
+        document.getElementById('lbTable').style.display = '';
+
+        // Unreachable
+        const unreachable = data.unreachable || [];
+        if (unreachable.length > 0) {
+          const card = document.getElementById('unreachableCard');
+          card.style.display = '';
+          document.getElementById('unreachableTitle').textContent =
+            `Unreachable / Error (${unreachable.length})`;
+          const list = document.getElementById('unreachableList');
+          unreachable.forEach(u => {
+            const div = document.createElement('div');
+            div.className = 'unreachable-item';
+            div.innerHTML = `
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--blue)">${u.url}</span>
+              <span class="err-reason">${u.reason || 'error'}</span>
+            `;
+            list.appendChild(div);
+          });
+        }
+      }
+
+      loadLeaderboard();
+    </script>
+  </body>
+</html>
